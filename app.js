@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cleanerRoutes = require("./routes/cleaner");
 const emailRoutes = require("./routes/email");
 const userRoutes = require("./routes/user");
-const errorHandler = require("./middleWare/error-middleware");
+const errorHandler = require("./middleware/error-middleware");
 const dotenv = require("dotenv").config();
 
 const app = express();
@@ -47,6 +47,6 @@ app.use("/", (req, res) => {
 });
 
 // Error Middleware
-// app.use(errorHandler);
+app.use(errorHandler);
 
 module.exports = app;
